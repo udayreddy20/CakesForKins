@@ -1,0 +1,52 @@
+//
+//  StringFile.swift
+
+import Foundation
+
+
+// Tables name
+let eUser               = "users"
+let eTrending           = "trending"
+let eGerne              = "gerneList"
+let eMovieList          = "movieList"
+let eTheaterList        = "theaterList"
+let eGerneName          = "gerneName"
+let eGerneID            = "gerneID"
+let eRate               = "rating"
+let eReview             = "review"
+let eEvent              = "events"
+let eEmail              = "email"
+let eAddress            = "address"
+let ePhone              = "phone"
+let eName               = "name"
+let eImage              = "image"
+let ePrice              = "price"
+let eDescription        = "description"
+let eRates              = "rate"
+let eSeatColumn         = "seatColumn"
+let eSeatRow            = "seatRow"
+let eCategoryID         = "categoryID"
+let eCategoryName       = "categoryName"
+let eBookingId          = "bookingId"
+let ePassword           = "password"
+let eConfirmPassword    = "ConfirmPassword"
+let eServerTime         = "timeStamp"
+let eFavourite          = "favourite"
+let eOrder              = "order"
+let eOrderData          = "orderData"
+let eOrderAmount        = "orderAmount"
+let eSeatNumber         = "seatNumber"
+let eOrderDate          = "orderDate"
+let eMovieName          = "movieName"
+let eTheaterName        = "theaterName"
+let eBookingNumber      = "bookingNumber"
+let eCardList           = "cardList"
+let eCardName           = "cardName"
+let eCardNumber         = "cardNumber"
+let eCardExpiryDate     = "expiryDate"
+let eCVV                = "cvv"
+let eMovieID            = "movieID"
+let eImagePath          = "imagePath"
+
+//confirmation messgae
+let deletePopup         = "Are you sure you want to delete this event?"
