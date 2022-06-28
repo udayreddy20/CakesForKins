@@ -46,8 +46,8 @@ class LoginVC: UIViewController {
         self.lblWelcome.textColor = UIColor.hexStringToUIColor(hex: "#EC2956")
         self.txtPassword.isSecureTextEntry = true
         
-        self.txtEmail.text = "test@grr.la"
-        self.txtPassword.text = "test@1234"
+        self.txtEmail.text = ""
+        self.txtPassword.text = ""
         // Do any additional setup after loading the view.
     }
     
