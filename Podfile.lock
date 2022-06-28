@@ -1,0 +1,24 @@
+PODS:
+  - DTPagerController (3.1.2)
+  - HMSegmentedControl (1.5.6)
+  - OpalImagePicker (3.0.0)
+
+DEPENDENCIES:
+  - DTPagerController
+  - HMSegmentedControl
+  - OpalImagePicker
+
+SPEC REPOS:
+  trunk:
+    - DTPagerController
+    - HMSegmentedControl
+    - OpalImagePicker
+
+SPEC CHECKSUMS:
+  DTPagerController: 91769c8711ad390bb48a984f3f1989712110e3f5
+  HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
+  OpalImagePicker: 38e772dd93a54431fc516b33e1f337c50f745834
+
+PODFILE CHECKSUM: c9ee40df3e1d3f52b46c9da0e355198f5c27379b
+
+COCOAPODS: 1.11.2
