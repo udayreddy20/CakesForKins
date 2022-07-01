@@ -65,7 +65,27 @@ class CustomCakeViewController: UIViewController, UITableViewDelegate, UITableVi
         model(imageString: "heart", title: "Heart", typeCake: .shape),
         model(imageString: "round", title: "Round", typeCake: .shape),
         model(imageString: "numeric", title: "Numeric", typeCake: .shape),
-       ]
+        model(imageString: "square", title: "Square", typeCake: .shape),
+        model(imageString: "alphabet", title: "Alphabet", typeCake: .shape),
+        model(imageString: "0.5 lbs", title: "Serves 2-3", typeCake: .size),
+        model(imageString: "1.0 lbs", title: "Serves 4-6", typeCake: .size),
+        model(imageString: "1.5 lbs", title: "Serves 6-8", typeCake: .size),
+        model(imageString: "2.0 lbs", title: "Serves 9-11", typeCake: .size),
+        model(imageString: "2.5 lbs", title: "Serves 12-15", typeCake: .size),
+        model(imageString: "3.0 lbs", title: "Serves 15-17", typeCake: .size),
+        model(imageString: "A", title: "Almond", typeCake: .flavour),
+        model(imageString: "B", title: "Black Current", typeCake: .flavour),
+        model(imageString: "B", title: "Butterscotch", typeCake: .flavour),
+        model(imageString: "C", title: "Chocolate", typeCake: .flavour),
+        model(imageString: "D", title: "Dark Chocolate", typeCake: .flavour),
+        model(imageString: "K", title: "Kit Kat", typeCake: .flavour),
+        model(imageString: "S", title: "Strawberry", typeCake: .filling),
+        model(imageString: "O", title: "Oreo Cookie", typeCake: .filling),
+        model(imageString: "M", title: "Mango", typeCake: .filling),
+        model(imageString: "C", title: "Chocolate Rum", typeCake: .filling),
+        model(imageString: "B", title: "Blackberry", typeCake: .filling),
+        model(imageString: "A", title: "Almonds", typeCake: .filling)
+    ]
     
     var data = [model]()
     
@@ -115,6 +135,22 @@ class CustomCakeViewController: UIViewController, UITableViewDelegate, UITableVi
                 return
             case 1:
                 self.data = self.getData(type: .shape)
+                self.typeTbl.reloadData()
+                return
+            case 2:
+                self.data = self.getData(type: .size)
+                self.typeTbl.reloadData()
+                return
+            case 3:
+                self.data = self.getData(type: .flavour)
+                self.typeTbl.reloadData()
+                return
+            case 4:
+                self.data = self.getData(type: .filling)
+                self.typeTbl.reloadData()
+                return
+            case 5:
+                self.data = self.getData(type: .info)
                 self.typeTbl.reloadData()
                 return
             default:
@@ -186,6 +222,22 @@ class CustomCakeViewController: UIViewController, UITableViewDelegate, UITableVi
             return
         case 1:
             self.data = self.getData(type: .shape)
+            self.typeTbl.reloadData()
+            return
+        case 2:
+            self.data = self.getData(type: .size)
+            self.typeTbl.reloadData()
+            return
+        case 3:
+            self.data = self.getData(type: .flavour)
+            self.typeTbl.reloadData()
+            return
+        case 4:
+            self.data = self.getData(type: .filling)
+            self.typeTbl.reloadData()
+            return
+        case 5:
+            self.data = self.getData(type: .info)
             self.typeTbl.reloadData()
             return
         default:
