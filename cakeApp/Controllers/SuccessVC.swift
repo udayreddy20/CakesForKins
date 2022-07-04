@@ -4,11 +4,10 @@
 
 
 import UIKit
-import Lottie
 
 class SuccessVC: UIViewController {
 
-    @IBOutlet weak var vwSuccess: AnimationView!
+  // @IBOutlet weak var vwSuccess: AnimationView!
     
     
     var timer: Timer!
@@ -16,10 +15,10 @@ class SuccessVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.vwSuccess.contentMode = .scaleAspectFit
-        self.vwSuccess.loopMode = .playOnce
-        self.vwSuccess.animationSpeed = 1.5
-        self.vwSuccess.play()
+     //   self.vwSuccess.contentMode = .scaleAspectFit
+   // self.vwSuccess.loopMode = .playOnce
+   //     self.vwSuccess.animationSpeed = 1.5
+    //    self.vwSuccess.play()
         
         self.TimerChange()
         // Do any additional setup after loading the view.
