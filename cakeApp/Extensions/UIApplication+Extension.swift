@@ -18,6 +18,12 @@ extension UIApplication {
         }
     }
     
+    func setSuccess() {
+        if let homeNavigation = UIStoryboard.main.instantiateViewController(withClass: SuccessNav.self) {
+            self.setRootController(for: homeNavigation)
+        }
+    }
+    
 }
 
 extension UIApplication {
