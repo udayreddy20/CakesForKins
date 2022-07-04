@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qv8-0Z-NZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qv8-0Z-NZH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -565,10 +565,11 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7m-c3-4YY">
-                                                                            <rect key="frame" x="341" y="0.0" width="23" height="124"/>
+                                                                            <rect key="frame" x="331" y="0.0" width="33" height="124"/>
                                                                             <color key="tintColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                            <state key="normal" image="star" catalog="system"/>
+                                                                            <state key="normal" image="star.fill" catalog="system"/>
                                                                             <state key="selected" image="star.fill" catalog="system"/>
                                                                         </button>
                                                                     </subviews>
@@ -594,6 +595,7 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <connections>
+                                                    <outlet property="btnFav" destination="p7m-c3-4YY" id="XJp-zv-sjE"/>
                                                     <outlet property="imgCake" destination="78f-e0-C9J" id="Ew0-QV-ya0"/>
                                                     <outlet property="lblName" destination="rI8-Jf-RrN" id="I40-9t-Nbh"/>
                                                     <outlet property="vwCell" destination="oTx-ut-AwH" id="ZZi-hu-Pa1"/>
@@ -735,7 +737,7 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEf-x3-lMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="1638"/>
+            <point key="canvasLocation" x="2064" y="1610"/>
         </scene>
         <!--Home-->
         <scene sceneID="sag-Fv-t8b">
@@ -829,8 +831,10 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <connections>
+                                                    <outlet property="btnFav" destination="OuN-ZY-Ni2" id="M67-eg-ECe"/>
                                                     <outlet property="imgCake" destination="FeP-vQ-bcm" id="qbx-my-77F"/>
                                                     <outlet property="lblName" destination="Ge7-ki-HhG" id="GEu-T4-Kvh"/>
+                                                    <outlet property="lblPrice" destination="ZMa-jF-78A" id="id1-wh-geD"/>
                                                     <outlet property="vwCell" destination="WMw-Oa-TQn" id="nuY-KL-du6"/>
                                                     <outlet property="widthConst" destination="ZBB-hT-1PG" id="TXs-Dy-1lF"/>
                                                 </connections>
@@ -861,7 +865,7 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="Sc0-Q5-AYt">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="selectedImage" image="magnifyingglass" catalog="system" symbolScale="large"/>
+                        <imageReference key="selectedImage" image="homekit" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="cakeList" destination="PkF-5e-s9P" id="KYW-T3-zhx"/>
@@ -881,17 +885,17 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2g-kw-uCY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can create custom App using this options !!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9VH-Zb-3bA">
-                                <rect key="frame" x="20" y="143" width="374" height="43"/>
+                                <rect key="frame" x="20" y="99" width="374" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSd-Ng-U3A">
-                                <rect key="frame" x="0.0" y="191" width="414" height="622"/>
+                                <rect key="frame" x="0.0" y="147" width="414" height="715"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-H1-lat">
                                         <rect key="frame" x="10" y="10" width="394" height="666"/>
@@ -1112,13 +1116,207 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                             <constraint firstItem="n0Z-2d-JgF" firstAttribute="centerY" secondItem="iHe-cT-A1n" secondAttribute="centerY" id="sE0-TY-mzg"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="vwSuccess" destination="DB4-hO-VI3" id="HJi-Gt-vpg"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="J2Z-vA-d0g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMB-Kc-S3K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="2480"/>
+            <point key="canvasLocation" x="3799" y="1610"/>
+        </scene>
+        <!--Create-->
+        <scene sceneID="sQl-ja-In1">
+            <objects>
+                <viewController storyboardIdentifier="CustomVC" id="GiQ-tV-Tfp" customClass="CustomVC" customModule="cakeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iSl-9j-vaA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can create custom App using this options !!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPj-nM-gXz">
+                                <rect key="frame" x="20" y="108" width="374" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxV-bN-gyz">
+                                <rect key="frame" x="0.0" y="171" width="414" height="548"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sR4-Gu-6Io">
+                                        <rect key="frame" x="20" y="20" width="374" height="424"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a3h-bp-62D">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoI-aE-mzh">
+                                                        <rect key="frame" x="0.0" y="15" width="134" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lh3-xd-Gap">
+                                                        <rect key="frame" x="144" y="0.0" width="230" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Lh3-xd-Gap" secondAttribute="height" multiplier="115:27" id="794-eA-7j8"/>
+                                                            <constraint firstAttribute="height" constant="54" id="wsV-2h-vmn"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yHf-wo-DUh">
+                                                <rect key="frame" x="0.0" y="74" width="374" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Shape :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Pf-oA6">
+                                                        <rect key="frame" x="0.0" y="15" width="134" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select shape" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sei-kw-iqS">
+                                                        <rect key="frame" x="144" y="0.0" width="230" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="sei-kw-iqS" secondAttribute="height" multiplier="115:27" id="Gvd-YR-6jj"/>
+                                                            <constraint firstAttribute="height" constant="54" id="sNa-o3-CHW"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bke-7v-g3C">
+                                                <rect key="frame" x="0.0" y="148" width="374" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlq-Fh-T5o">
+                                                        <rect key="frame" x="0.0" y="15" width="134" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="select Size" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76p-ld-sMr">
+                                                        <rect key="frame" x="144" y="0.0" width="230" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="76p-ld-sMr" secondAttribute="height" multiplier="115:27" id="awn-pp-bsT"/>
+                                                            <constraint firstAttribute="height" constant="54" id="dkz-Ta-810"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Epq-Z9-mFK">
+                                                <rect key="frame" x="0.0" y="222" width="374" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Flavour:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHD-Ur-tXb">
+                                                        <rect key="frame" x="0.0" y="16.5" width="134" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Flavour" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f4p-NL-xee">
+                                                        <rect key="frame" x="144" y="0.0" width="230" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="54" id="E2I-PF-pKy"/>
+                                                            <constraint firstAttribute="width" secondItem="f4p-NL-xee" secondAttribute="height" multiplier="115:27" id="mhC-Yf-Vko"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IMm-7q-heH">
+                                                <rect key="frame" x="0.0" y="296" width="374" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Filling:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bGn-uA-IGm">
+                                                        <rect key="frame" x="0.0" y="15" width="134" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Filling" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-Db-u5v">
+                                                        <rect key="frame" x="144" y="0.0" width="230" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="fXd-Db-u5v" secondAttribute="height" multiplier="115:27" id="ZfR-Nm-Jh3"/>
+                                                            <constraint firstAttribute="height" constant="54" id="a2J-bT-ghQ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xv8-Za-vR6">
+                                                <rect key="frame" x="0.0" y="370" width="374" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Info:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fL9-G2-50V">
+                                                        <rect key="frame" x="0.0" y="15" width="134" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Info" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2O-f6-rW7">
+                                                        <rect key="frame" x="144" y="0.0" width="230" height="54"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="r2O-f6-rW7" secondAttribute="height" multiplier="115:27" id="T4d-Qk-8Vi"/>
+                                                            <constraint firstAttribute="height" constant="54" id="lDF-ka-zfR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sR4-Gu-6Io" firstAttribute="leading" secondItem="KxV-bN-gyz" secondAttribute="leading" constant="20" id="8aq-hy-1t9"/>
+                                    <constraint firstAttribute="trailing" secondItem="sR4-Gu-6Io" secondAttribute="trailing" constant="20" id="NMW-h1-pXV"/>
+                                    <constraint firstAttribute="bottom" secondItem="sR4-Gu-6Io" secondAttribute="bottom" constant="20" id="huj-6n-szV"/>
+                                    <constraint firstItem="sR4-Gu-6Io" firstAttribute="top" secondItem="KxV-bN-gyz" secondAttribute="top" constant="20" id="z0M-aw-TZY"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujJ-bU-iK4" customClass="BlueThemeButton" customModule="cakeApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="739" width="374" height="54"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Place order">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="btnAddCartClick:" destination="8Ns-Li-eyg" eventType="touchUpInside" id="yMK-Vc-wL6"/>
+                                    <action selector="btnPlaceOrderClick:" destination="GiQ-tV-Tfp" eventType="touchUpInside" id="d80-3H-pcr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qpg-8c-8gV"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstItem="Qpg-8c-8gV" firstAttribute="bottom" secondItem="ujJ-bU-iK4" secondAttribute="bottom" constant="20" id="0cC-VA-fMb"/>
+                            <constraint firstItem="sR4-Gu-6Io" firstAttribute="centerX" secondItem="Qpg-8c-8gV" secondAttribute="centerX" id="IJD-bs-my2"/>
+                            <constraint firstItem="Qpg-8c-8gV" firstAttribute="trailing" secondItem="ujJ-bU-iK4" secondAttribute="trailing" constant="20" id="K30-bf-l7D"/>
+                            <constraint firstItem="ujJ-bU-iK4" firstAttribute="top" secondItem="KxV-bN-gyz" secondAttribute="bottom" constant="20" id="LMT-in-UiE"/>
+                            <constraint firstItem="Qpg-8c-8gV" firstAttribute="trailing" secondItem="KxV-bN-gyz" secondAttribute="trailing" id="MgQ-Gf-ppG"/>
+                            <constraint firstItem="ujJ-bU-iK4" firstAttribute="height" secondItem="iSl-9j-vaA" secondAttribute="height" multiplier="0.0602679" id="YcI-XR-D4K"/>
+                            <constraint firstAttribute="trailing" secondItem="hPj-nM-gXz" secondAttribute="trailing" constant="20" id="kll-UG-g3C"/>
+                            <constraint firstItem="KxV-bN-gyz" firstAttribute="top" secondItem="hPj-nM-gXz" secondAttribute="bottom" constant="20" id="lEN-gg-H9s"/>
+                            <constraint firstItem="hPj-nM-gXz" firstAttribute="top" secondItem="Qpg-8c-8gV" secondAttribute="top" constant="20" id="lbU-1k-WFt"/>
+                            <constraint firstItem="KxV-bN-gyz" firstAttribute="leading" secondItem="Qpg-8c-8gV" secondAttribute="leading" id="oQe-1k-HE5"/>
+                            <constraint firstItem="hPj-nM-gXz" firstAttribute="leading" secondItem="Qpg-8c-8gV" secondAttribute="leading" constant="20" id="vS2-nX-huo"/>
+                            <constraint firstItem="ujJ-bU-iK4" firstAttribute="leading" secondItem="iSl-9j-vaA" secondAttribute="leading" constant="20" id="wX5-cI-qj5"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create" image="cake1-1" selectedImage="cake1-1" id="pEH-dU-1hF"/>
+                    <connections>
+                        <outlet property="txtFilling" destination="fXd-Db-u5v" id="Kfx-Dg-J3m"/>
+                        <outlet property="txtFlavour" destination="f4p-NL-xee" id="7BM-dJ-S6C"/>
+                        <outlet property="txtInfo" destination="r2O-f6-rW7" id="nmc-G5-gJ7"/>
+                        <outlet property="txtShape" destination="sei-kw-iqS" id="RBC-AK-cZB"/>
+                        <outlet property="txtSize" destination="76p-ld-sMr" id="KDj-Yx-Ucj"/>
+                        <outlet property="txtType" destination="Lh3-xd-Gap" id="h6h-ts-e06"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJu-Ym-9Xf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4702.898550724638" y="1609.8214285714284"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gAv-gF-ZaD">
@@ -1133,7 +1331,7 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                     <connections>
                         <segue destination="Ggj-Zo-6rw" kind="relationship" relationship="viewControllers" id="Brq-9n-mYW"/>
                         <segue destination="zim-eE-rrH" kind="relationship" relationship="viewControllers" id="tjK-HV-wqk"/>
-                        <segue destination="JAF-Cs-OwV" kind="relationship" relationship="viewControllers" id="3TG-g0-XGl"/>
+                        <segue destination="GiQ-tV-Tfp" kind="relationship" relationship="viewControllers" id="HwC-7B-ENq"/>
                         <segue destination="sjN-KD-V5U" kind="relationship" relationship="viewControllers" id="NiR-85-iI2"/>
                         <segue destination="0Qz-tw-W2y" kind="relationship" relationship="viewControllers" id="1vt-WR-Gj9"/>
                     </connections>
@@ -1198,20 +1396,20 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                                                                                         <constraint firstAttribute="width" constant="100" id="tON-zU-XNx"/>
                                                                                     </constraints>
                                                                                 </imageView>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S9v-8b-En7">
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="S9v-8b-En7">
                                                                                     <rect key="frame" x="130" y="10" width="254" height="272"/>
                                                                                     <subviews>
-                                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-65-xYA">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="77"/>
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-65-xYA">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="254" height="24"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black Forest" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5E9-Nx-hYx">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="113.5" height="77"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="113.5" height="24"/>
                                                                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                                                     <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJB-Sd-x99">
-                                                                                                    <rect key="frame" x="212.5" y="0.0" width="41.5" height="77"/>
+                                                                                                    <rect key="frame" x="212.5" y="0.0" width="41.5" height="20.5"/>
                                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                                     <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -1219,13 +1417,13 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                                                                                             </subviews>
                                                                                         </stackView>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="1 Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gc2-XA-d2M">
-                                                                                            <rect key="frame" x="0.0" y="87" width="254" height="65.5"/>
+                                                                                            <rect key="frame" x="0.0" y="127.5" width="254" height="20.5"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                             <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnA-DX-Ye5">
-                                                                                            <rect key="frame" x="0.0" y="162.5" width="254" height="109.5"/>
+                                                                                            <rect key="frame" x="0.0" y="251.5" width="254" height="20.5"/>
                                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                             <color key="textColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                                             <nil key="highlightedColor"/>
@@ -1301,7 +1499,7 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                             <constraint firstItem="Rru-Q1-gfR" firstAttribute="trailing" secondItem="evh-fB-kn4" secondAttribute="trailing" id="uvZ-JM-E92"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Booking" image="calendar" catalog="system" selectedImage="account_menu" id="8WG-KV-l68"/>
+                    <tabBarItem key="tabBarItem" title="Booking" image="calendar" catalog="system" selectedImage="calendar" id="8WG-KV-l68"/>
                     <connections>
                         <outlet property="orderList" destination="X4C-MU-PiC" id="gum-Xa-5yk"/>
                         <outlet property="vwOrder" destination="GjV-On-GC4" id="OtG-7n-vUz"/>
@@ -1319,17 +1517,17 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                         <rect key="frame" x="0.0" y="0.0" width="438" height="917"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CakeApp" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-Ly-Lzl">
-                                <rect key="frame" x="107" y="84" width="224.5" height="53.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CakeApp" translatesAutoresizingMaskIntoConstraints="NO" id="vRq-Ly-Lzl">
+                                <rect key="frame" x="107" y="128" width="224.5" height="53.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrl-jr-RQF">
-                                <rect key="frame" x="39" y="185.5" width="360" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrl-jr-RQF">
+                                <rect key="frame" x="39" y="229.5" width="360" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-ku-2ja">
-                                <rect key="frame" x="39" y="404" width="360" height="231"/>
+                                <rect key="frame" x="39" y="300" width="360" height="231"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fty-eH-Tx7">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="45"/>
@@ -1364,7 +1562,7 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WwL-GC-dhs" customClass="BlueThemeButton" customModule="cakeApp" customModuleProvider="target">
-                                <rect key="frame" x="39" y="665" width="360" height="54"/>
+                                <rect key="frame" x="39" y="561" width="360" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WwL-GC-dhs" secondAttribute="height" multiplier="360:54" id="LVj-ug-6hk"/>
                                 </constraints>
@@ -1376,14 +1574,6 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                                     <action selector="btnSaveClick:" destination="0Qz-tw-W2y" eventType="touchUpInside" id="cTF-lD-L9e"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ArZ-8Z-BK7">
-                                <rect key="frame" x="155" y="236.5" width="128" height="127"/>
-                                <color key="tintColor" red="0.88235294119999996" green="0.38431372549999998" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="YJ8-0l-GMM"/>
-                                    <constraint firstAttribute="width" constant="128" id="hdI-RJ-r90"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNU-ql-etD" customClass="BlueThemeButton" customModule="cakeApp" customModuleProvider="target">
                                 <rect key="frame" x="39" y="783" width="360" height="54"/>
                                 <state key="normal" title="Button"/>
@@ -1399,7 +1589,6 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="246-9x-YFk" firstAttribute="trailing" secondItem="zrl-jr-RQF" secondAttribute="trailing" constant="39" id="2xX-Nj-jgX"/>
-                            <constraint firstItem="gbZ-ku-2ja" firstAttribute="top" secondItem="ArZ-8Z-BK7" secondAttribute="bottom" constant="40" id="AiI-1U-Pfi"/>
                             <constraint firstAttribute="bottom" secondItem="JNU-ql-etD" secondAttribute="bottom" constant="80" id="CUp-c0-0OI"/>
                             <constraint firstItem="WwL-GC-dhs" firstAttribute="leading" secondItem="gbZ-ku-2ja" secondAttribute="leading" id="CZC-lK-F4s"/>
                             <constraint firstItem="246-9x-YFk" firstAttribute="trailing" secondItem="JNU-ql-etD" secondAttribute="trailing" constant="39" id="DdM-tE-QF8"/>
@@ -1411,12 +1600,11 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                             <constraint firstItem="vRq-Ly-Lzl" firstAttribute="centerX" secondItem="16M-EJ-7SP" secondAttribute="centerX" id="T9F-90-adr"/>
                             <constraint firstItem="JNU-ql-etD" firstAttribute="height" secondItem="WwL-GC-dhs" secondAttribute="height" id="WDu-Wk-SB7"/>
                             <constraint firstItem="JNU-ql-etD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WwL-GC-dhs" secondAttribute="bottom" constant="64" id="XXE-jQ-5bm"/>
+                            <constraint firstItem="gbZ-ku-2ja" firstAttribute="top" secondItem="zrl-jr-RQF" secondAttribute="bottom" constant="50" id="a5J-kk-Zt4"/>
                             <constraint firstItem="gbZ-ku-2ja" firstAttribute="leading" secondItem="zrl-jr-RQF" secondAttribute="leading" id="dEH-7E-B27"/>
                             <constraint firstItem="vRq-Ly-Lzl" firstAttribute="top" secondItem="246-9x-YFk" secondAttribute="top" constant="40" id="hYQ-Nf-zsd"/>
                             <constraint firstItem="WwL-GC-dhs" firstAttribute="trailing" secondItem="gbZ-ku-2ja" secondAttribute="trailing" id="iqM-JT-nks"/>
-                            <constraint firstItem="ArZ-8Z-BK7" firstAttribute="centerX" secondItem="246-9x-YFk" secondAttribute="centerX" id="r3o-Al-K2u"/>
                             <constraint firstItem="gbZ-ku-2ja" firstAttribute="trailing" secondItem="zrl-jr-RQF" secondAttribute="trailing" id="uSe-s8-kui"/>
-                            <constraint firstItem="ArZ-8Z-BK7" firstAttribute="top" secondItem="zrl-jr-RQF" secondAttribute="bottom" constant="30" id="xCN-hv-4RK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="VmS-Ya-3sW">
@@ -1434,7 +1622,6 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
                     <connections>
                         <outlet property="btnLogout" destination="JNU-ql-etD" id="Eiu-qW-TBi"/>
                         <outlet property="btnSave" destination="WwL-GC-dhs" id="55q-oN-WVl"/>
-                        <outlet property="imgProfile" destination="ArZ-8Z-BK7" id="7Jf-bK-akD"/>
                         <outlet property="txtAddress" destination="aoS-t8-14a" id="2pc-lh-eFK"/>
                         <outlet property="txtEmail" destination="QdT-LY-Ali" id="E0A-dB-I4o"/>
                         <outlet property="txtNAme" destination="fty-eH-Tx7" id="boC-bH-rvg"/>
@@ -1463,23 +1650,38 @@ A stick-to-the-back-of-your-fork moist cake.Flavor: This 6-inch birthday cake is
             </objects>
             <point key="canvasLocation" x="3799" y="-662"/>
         </scene>
+        <!--Success Nav-->
+        <scene sceneID="e4S-7W-RaV">
+            <objects>
+                <navigationController storyboardIdentifier="SuccessNav" automaticallyAdjustsScrollViewInsets="NO" id="0bz-D5-UAz" customClass="SuccessNav" customModule="cakeApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xFA-8e-lFq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mdi-gw-DHL" kind="relationship" relationship="rootViewController" id="vSb-Ok-YMw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlE-Ci-3wh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="1610"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CakeApp" width="224.5" height="53.5"/>
         <image name="Rectangle 14" width="39.5" height="39"/>
         <image name="Success" width="112" height="112"/>
-        <image name="account_menu" width="30" height="30"/>
         <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <image name="cake1" width="236" height="236"/>
         <image name="cake1-1" width="27.5" height="27.5"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="camera.circle" catalog="system" width="128" height="121"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="image 1" width="37" height="37"/>
         <image name="image 2" width="30.5" height="30"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
