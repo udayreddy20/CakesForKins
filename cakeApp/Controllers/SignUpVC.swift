@@ -47,10 +47,14 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         self.lblWelcome.font = UIFont(name: "bold", size: 22.0)
         self.lblWelcome.textColor = UIColor.hexStringToUIColor(hex: "#EC2956")
+        
+        if socialData != nil {
+            self.txtName.text = "\(socialData.firstName ?? "") \(socialData.lastName ?? "")"
+            self.txtEmail.text = socialData.email
+            self.txtEmail.isUserInteractionEnabled = false
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -59,10 +63,61 @@ class SignUpVC: UIViewController {
         self.flag = false
         let error = self.validation()
         if error == "" {
-            UIApplication.shared.setTab()
+            self.getExistingUser(name: self.txtName.text ?? "" , email: self.txtEmail.text ?? "", mobile: self.txtPhone.text ?? "", address: self.txtAddress.text ?? "", password: self.txtPassword.text ?? "")
         }else{
             Alert.shared.showAlert(message: error, completion: nil)
         }
     }
 
+}
+
+
+
+
+//MARK:- Extension for Login Function
+extension SignUpVC {
+
+    func createAccount(name: String, email: String, mobile: String, address: String, password: String) {
+        var ref : DocumentReference? = nil
+        ref = AppDelegate.shared.db.collection(cUser).addDocument(data:
+            [
+              cPhone: mobile,
+              cEmail: email,
+              cName: name,
+              cPassword : password,
+              cAddress: address
+            ])
+        {  err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                GFunction.shared.firebaseRegister(data: email)
+                GFunction.user = UserModel(docID: "", name: name, mobile: mobile, email: email, password: password, address: address)
+                UIApplication.shared.setTab()
+                self.flag = true
+            }
+        }
+    }
+
+    func getExistingUser(name: String, email: String, mobile: String, address: String, password: String) {
+
+        _ = AppDelegate.shared.db.collection(cUser).whereField(cEmail, isEqualTo: email).addSnapshotListener{ querySnapshot, error in
+
+            guard let snapshot = querySnapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+
+            if snapshot.documents.count == 0 {
+                self.createAccount(name: name, email: email, mobile: mobile, address: address, password: password)
+                self.flag = true
+            }else{
+                if !self.flag {
+                    Alert.shared.showAlert(message: "Email is already exist !!!", completion: nil)
+                    self.flag = true
+                }
+            }
+        }
+    }
 }
