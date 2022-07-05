@@ -30,6 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
+    override init() {
+        super.init()
+        GIDSignIn.sharedInstance().clientID = "780649413525-78vqve64qr59ebmptj5ftrci3kpmv8uf.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -51,5 +58,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+extension AppDelegate: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+
+        // Post notification after user successfully sign in
+        NotificationCenter.default.post(name: .signInGoogleCompleted, object: nil)
+    }
+}
+
+
+// MARK:- Notification names
+extension Notification.Name {
+    
+    /// Notification when user successfully sign in using Google
+    static var signInGoogleCompleted: Notification.Name {
+        return .init(rawValue: #function)
+    }
 }
 
