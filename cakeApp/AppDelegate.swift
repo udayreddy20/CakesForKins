@@ -6,15 +6,27 @@
 //
 
 import UIKit
+@_exported import Firebase
+@_exported import FirebaseFirestore
+@_exported import FirebaseCore
+@_exported import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     static let shared : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    var db : Firestore!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        FirebaseApp.configure()
+        db = Firestore.firestore()
+        let settings = db.settings
+        db.settings = settings
+        
+        
         return true
     }
 
