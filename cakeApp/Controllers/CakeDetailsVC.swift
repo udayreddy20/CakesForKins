@@ -11,16 +11,26 @@ class CakeDetailsVC: UIViewController {
     @IBOutlet weak var lblCakeDescription: UILabel!
     
     
+     var data: CakeModel!
+    var isFav : Bool = true
+    
+    
     @IBAction func btnAddFavClick(_ sender: Any) {
-        Alert.shared.showAlert(message: "Your cake has been added into favourite list"){ _ in
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.checkAddToFav(data: data, email: GFunction.user.email)
     }
     
     @IBAction func btnAddCartClick(_ sender: Any) {
-        Alert.shared.showAlert(message: "Your cake has been placed") { _ in
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.createOrder(data: data, user: GFunction.user, date: self.UTCToDate(date: Date()))
+    }
+    
+    func UTCToDate(date:Date) -> String {
+        let formatter = DateFormatter()
+       
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: date) // string purpose I add here
+        let yourDate = formatter.date(from: myString)  // convert your string to date
+        formatter.dateFormat = "dd, MMM, yyyy"  //then again set the date format whhich type of output you need
+        return formatter.string(from: yourDate!) // again convert your date to string
     }
     
     override func viewDidLoad() {
