@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C876BFD28707D890098C8D9 /* SendGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 8C876BFC28707D890098C8D9 /* SendGrid */; };
 		C123D9ED8EE5C82134972257 /* Pods_cakeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F071902CDAA1FBE36ED52B43 /* Pods_cakeApp.framework */; };
 		DB6FBE4728664BBD00248710 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FBE4628664BBD00248710 /* ProfileVC.swift */; };
 		DB6FBE492866567F00248710 /* AuthNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FBE482866567F00248710 /* AuthNav.swift */; };
@@ -14,10 +15,15 @@
 		DB6FBE4D2866581500248710 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FBE4C2866581500248710 /* HomeVC.swift */; };
 		DB7CF1942860E68F00FCBB25 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7CF1932860E68F00FCBB25 /* SearchVC.swift */; };
 		DB7CF1962860E82800FCBB25 /* CakeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7CF1952860E82800FCBB25 /* CakeDetailsVC.swift */; };
+		DB8AE8E0286E0D3000A61E4D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AE8DF286E0D3000A61E4D /* UserModel.swift */; };
+		DB8AE8E2286E2D6A00A61E4D /* CakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AE8E1286E2D6A00A61E4D /* CakeModel.swift */; };
+		DB8AE8E6286E50C600A61E4D /* SuccessNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8AE8E5286E50C600A61E4D /* SuccessNav.swift */; };
+		DBB5A698286F4DB6009EBB3A /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB5A697286F4DB6009EBB3A /* OrderModel.swift */; };
+		DBB5A69A286F8947009EBB3A /* CustomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB5A699286F8947009EBB3A /* CustomVC.swift */; };
+		DBD615A4286779E200BF68D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBD615A3286779E200BF68D5 /* GoogleService-Info.plist */; };
 		DBD6F18B2864CC4500619B96 /* CreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6F18A2864CC4500619B96 /* CreateVC.swift */; };
 		DBD6F18E2864D23500619B96 /* success.gif in Resources */ = {isa = PBXBuildFile; fileRef = DBD6F18D2864D23500619B96 /* success.gif */; };
 		DBD6F1902864D35F00619B96 /* SuccessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6F18F2864D35F00619B96 /* SuccessVC.swift */; };
-		DBD6F1932864D44700619B96 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DBD6F1922864D44700619B96 /* Lottie */; };
 		DBD6F1952864D86E00619B96 /* OrderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD6F1942864D86D00619B96 /* OrderVC.swift */; };
 		DBFE792E285EF70B003AC6D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFE792D285EF70B003AC6D3 /* AppDelegate.swift */; };
 		DBFE7930285EF70B003AC6D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFE792F285EF70B003AC6D3 /* SceneDelegate.swift */; };
@@ -55,6 +61,12 @@
 		DB6FBE4C2866581500248710 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		DB7CF1932860E68F00FCBB25 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		DB7CF1952860E82800FCBB25 /* CakeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDetailsVC.swift; sourceTree = "<group>"; };
+		DB8AE8DF286E0D3000A61E4D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DB8AE8E1286E2D6A00A61E4D /* CakeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeModel.swift; sourceTree = "<group>"; };
+		DB8AE8E5286E50C600A61E4D /* SuccessNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessNav.swift; sourceTree = "<group>"; };
+		DBB5A697286F4DB6009EBB3A /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		DBB5A699286F8947009EBB3A /* CustomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVC.swift; sourceTree = "<group>"; };
+		DBD615A3286779E200BF68D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBD6F18A2864CC4500619B96 /* CreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateVC.swift; sourceTree = "<group>"; };
 		DBD6F18D2864D23500619B96 /* success.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = success.gif; sourceTree = "<group>"; };
 		DBD6F18F2864D35F00619B96 /* SuccessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessVC.swift; sourceTree = "<group>"; };
@@ -94,8 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C876BFD28707D890098C8D9 /* SendGrid in Frameworks */,
 				C123D9ED8EE5C82134972257 /* Pods_cakeApp.framework in Frameworks */,
-				DBD6F1932864D44700619B96 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +123,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DB8AE8DE286E0D1F00A61E4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB8AE8DF286E0D3000A61E4D /* UserModel.swift */,
+				DB8AE8E1286E2D6A00A61E4D /* CakeModel.swift */,
+				DBB5A697286F4DB6009EBB3A /* OrderModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		DBD6F18C2864D21500619B96 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +144,7 @@
 		DBFE7921285EF70B003AC6D3 = {
 			isa = PBXGroup;
 			children = (
+				DB8AE8DE286E0D1F00A61E4D /* Model */,
 				DBFE792C285EF70B003AC6D3 /* cakeApp */,
 				DBFE792B285EF70B003AC6D3 /* Products */,
 				17502A0182E5DA57DF2C4733 /* Pods */,
@@ -140,6 +163,7 @@
 		DBFE792C285EF70B003AC6D3 /* cakeApp */ = {
 			isa = PBXGroup;
 			children = (
+				DBD615A3286779E200BF68D5 /* GoogleService-Info.plist */,
 				DBD6F18C2864D21500619B96 /* Resource */,
 				DBFE7948285F057A003AC6D3 /* Extensions */,
 				DBFE7941285F03B9003AC6D3 /* Controllers */,
@@ -169,6 +193,8 @@
 				DB6FBE482866567F00248710 /* AuthNav.swift */,
 				DB6FBE4A2866569300248710 /* HomeNav.swift */,
 				DB6FBE4C2866581500248710 /* HomeVC.swift */,
+				DB8AE8E5286E50C600A61E4D /* SuccessNav.swift */,
+				DBB5A699286F8947009EBB3A /* CustomVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -216,6 +242,7 @@
 				DBFE7927285EF70B003AC6D3 /* Frameworks */,
 				DBFE7928285EF70B003AC6D3 /* Resources */,
 				3D118BEFDAAC3794B153DCC7 /* [CP] Embed Pods Frameworks */,
+				B5A7BED1C1DEC693F5F99951 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,7 +250,7 @@
 			);
 			name = cakeApp;
 			packageProductDependencies = (
-				DBD6F1922864D44700619B96 /* Lottie */,
+				8C876BFC28707D890098C8D9 /* SendGrid */,
 			);
 			productName = cakeApp;
 			productReference = DBFE792A285EF70B003AC6D3 /* cakeApp.app */;
@@ -254,7 +281,7 @@
 			);
 			mainGroup = DBFE7921285EF70B003AC6D3;
 			packageReferences = (
-				DBD6F1912864D44700619B96 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8C876BFB28707D890098C8D9 /* XCRemoteSwiftPackageReference "sendgrid-swift" */,
 			);
 			productRefGroup = DBFE792B285EF70B003AC6D3 /* Products */;
 			projectDirPath = "";
@@ -272,6 +299,7 @@
 			files = (
 				DBFE793A285EF70D003AC6D3 /* LaunchScreen.storyboard in Resources */,
 				DBFE7937285EF70D003AC6D3 /* Assets.xcassets in Resources */,
+				DBD615A4286779E200BF68D5 /* GoogleService-Info.plist in Resources */,
 				DBD6F18E2864D23500619B96 /* success.gif in Resources */,
 				DBFE7935285EF70B003AC6D3 /* Main.storyboard in Resources */,
 			);
@@ -295,6 +323,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cakeApp/Pods-cakeApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5A7BED1C1DEC693F5F99951 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cakeApp/Pods-cakeApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cakeApp/Pods-cakeApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cakeApp/Pods-cakeApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2AF3F262E4BB069771341E1 /* [CP] Check Pods Manifest.lock */ = {
@@ -339,19 +384,24 @@
 				DBFE7961285F057A003AC6D3 /* UserDefault+Extension.swift in Sources */,
 				DB6FBE492866567F00248710 /* AuthNav.swift in Sources */,
 				DBD6F1952864D86E00619B96 /* OrderVC.swift in Sources */,
+				DB8AE8E6286E50C600A61E4D /* SuccessNav.swift in Sources */,
 				DB7CF1962860E82800FCBB25 /* CakeDetailsVC.swift in Sources */,
 				DBFE795A285F057A003AC6D3 /* UIApplication+Extension.swift in Sources */,
 				DB6FBE4D2866581500248710 /* HomeVC.swift in Sources */,
+				DBB5A698286F4DB6009EBB3A /* OrderModel.swift in Sources */,
 				DBFE7962285F057A003AC6D3 /* GFunction.swift in Sources */,
 				DBD6F18B2864CC4500619B96 /* CreateVC.swift in Sources */,
 				DBFE795B285F057A003AC6D3 /* UIImageView+Extensions.swift in Sources */,
+				DBB5A69A286F8947009EBB3A /* CustomVC.swift in Sources */,
 				DB6FBE4728664BBD00248710 /* ProfileVC.swift in Sources */,
 				DBFE795E285F057A003AC6D3 /* Alert.swift in Sources */,
 				DBFE7964285F057A003AC6D3 /* String+Extension.swift in Sources */,
+				DB8AE8E2286E2D6A00A61E4D /* CakeModel.swift in Sources */,
 				DBFE7947285F054E003AC6D3 /* LoginVC.swift in Sources */,
 				DB7CF1942860E68F00FCBB25 /* SearchVC.swift in Sources */,
 				DBFE7930285EF70B003AC6D3 /* SceneDelegate.swift in Sources */,
 				DBFE7963285F057A003AC6D3 /* UITapGesture+Extensions.swift in Sources */,
+				DB8AE8E0286E0D3000A61E4D /* UserModel.swift in Sources */,
 				DBFE7960285F057A003AC6D3 /* UILabel+Extension.swift in Sources */,
 				DBFE7966285F057A003AC6D3 /* UICollectionView+Extension.swift in Sources */,
 				DBFE7959285F057A003AC6D3 /* GClass.swift in Sources */,
@@ -584,21 +634,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DBD6F1912864D44700619B96 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		8C876BFB28707D890098C8D9 /* XCRemoteSwiftPackageReference "sendgrid-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			repositoryURL = "https://github.com/scottkawai/sendgrid-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DBD6F1922864D44700619B96 /* Lottie */ = {
+		8C876BFC28707D890098C8D9 /* SendGrid */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DBD6F1912864D44700619B96 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
+			package = 8C876BFB28707D890098C8D9 /* XCRemoteSwiftPackageReference "sendgrid-swift" */;
+			productName = SendGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
