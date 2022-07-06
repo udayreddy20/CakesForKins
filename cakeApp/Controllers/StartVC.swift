@@ -11,7 +11,9 @@ class StartVC: UIViewController {
     @IBOutlet weak var btnFaceBook: UIButton!
     @IBOutlet weak var lblLogin: UILabel!
     
-
+    //MARK:- Class Variables
+    private let socialLoginManager: SocialLoginManager = SocialLoginManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.btnEmail.layer.cornerRadius = 12.0
@@ -26,6 +28,9 @@ class StartVC: UIViewController {
             }
         }
         self.lblLogin.addGestureRecognizer(tap)
+        
+        
+        self.socialLoginManager.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -36,10 +41,46 @@ class StartVC: UIViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }else if sender == btnGoogle {
-            //self.socialLoginManager.performGoogleLogin(vc: self)
+            self.socialLoginManager.performGoogleLogin(vc: self)
         }else if sender == btnFaceBook {
-            //self.socialLoginManager.performAppleLogin()
+            self.socialLoginManager.performFacebookLogin()
         }
     }
 
+}
+
+
+extension StartVC: SocialLoginDelegate {
+
+    func socialLoginData(data: SocialLoginDataModel) {
+        print("Social Id==>", data.socialId ?? "")
+        print("First Name==>", data.firstName ?? "")
+        print("Last Name==>", data.lastName ?? "")
+        print("Email==>", data.email ?? "")
+        print("Login type==>", data.loginType ?? "")
+        self.loginUser(email: data.email, password: data.socialId,data: data)
+    }
+
+    func loginUser(email:String,password:String,data: SocialLoginDataModel) {
+        
+        _ = AppDelegate.shared.db.collection(cUser).whereField(cEmail, isEqualTo: email).addSnapshotListener{ querySnapshot, error in
+            
+            guard let snapshot = querySnapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+            
+            if snapshot.documents.count != 0 {
+                if let vc = UIStoryboard.main.instantiateViewController(withClass:  LoginVC.self) {
+                    vc.socialData = data
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }else{
+                if let vc = UIStoryboard.main.instantiateViewController(withClass:  SignUpVC.self) {
+                    vc.socialData = data
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+        }
+    }
 }
