@@ -44,6 +44,31 @@ class OrderVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 
 
+    func getData(email:String) {
+        _ = AppDelegate.shared.db.collection(cOrder).whereField(cEmail, isEqualTo: email).addSnapshotListener{ querySnapshot, error in
+            
+            guard let snapshot = querySnapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+            self.cakeOrderListData.removeAll()
+            if snapshot.documents.count != 0 {
+                for data in snapshot.documents {
+                    let data1 = data.data()
+                    if let name: String = data1[cName] as? String, let description: String = data1[cDescription] as? String,let imagePath: String = data1[cImagePath] as? String, let price: String = data1[cPrice] as? String, let email: String = data1[cEmail] as? String, let orderDate: String = data1[cOrderDate] as? String,let quantity: String = data1[cQuantity] as? String,let status: String = data1[cStatus] as? String {
+                        print("Data Count : \(self.cakeOrderListData.count)")
+                        self.cakeOrderListData.append(OrderModel(docID: data.documentID, name: name, description: description, email: email, orderDate: orderDate, imagePath: imagePath, price: price,status: status,qty: quantity))
+                    }
+                }
+                self.orderList.delegate = self
+                self.orderList.dataSource = self
+                self.orderList.reloadData()
+            }else{
+                Alert.shared.showAlert(message: "No Data Found !!!", completion: nil)
+            }
+        }
+    }
+}
 
 class orderViewCell: UITableViewCell {
     
