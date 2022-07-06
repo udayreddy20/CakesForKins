@@ -19,6 +19,7 @@ class SignUpVC: UIViewController {
     
     
     var flag: Bool = true
+    var socialData : SocialLoginDataModel!
     
     
     func validation() -> String {
