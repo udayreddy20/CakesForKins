@@ -29,17 +29,15 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate {
         tap.addAction {
             self.openPicker()
         }
-        self.imgProfile.isUserInteractionEnabled = true
-        self.imgProfile.addGestureRecognizer(tap)
-        self.imgProfile.layer.cornerRadius = self.imgProfile.frame.height/2
-        self.imgProfile.layer.borderColor = UIColor.red.cgColor
-        self.imgProfile.layer.borderWidth = 1.0
-        
-        
-        self.txtEmail.text = "test@grr.la"
-        self.txtPhone.text = "1234569870"
-        self.txtNAme.text = "Test Cake"
-        self.txtAddress.text = "Quebeq, Canada"
+
+        if !GFunction.user.email.isEmpty{
+            self.txtEmail.text = GFunction.user.email
+            self.txtPhone.text = GFunction.user.mobile
+            self.txtNAme.text = GFunction.user.name
+            self.txtAddress.text = GFunction.user.address
+            self.txtEmail.isUserInteractionEnabled = false
+        }
+       
         // Do any additional setup after loading the view.
     }
     
@@ -56,9 +54,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate {
     
     
     func validation() -> String {
-        if !isImageSelected {
-         return "Please select Image"
-        }else if self.txtNAme.text?.trim() == ""{
+        if self.txtNAme.text?.trim() == ""{
             return "Please enter name"
         }else if self.txtEmail.text?.trim() == "" {
             return "Please enter email"
@@ -77,6 +73,7 @@ class ProfileVC: UIViewController, UINavigationControllerDelegate {
         if sender == btnSave {
             let error = self.validation()
             if error == "" {
+                self.updateProfile(docID: GFunction.user.docID, name: self.txtNAme.text ?? "", phoneNumber: self.txtPhone.text ?? "", address: self.txtAddress.text ?? "")
                 Alert.shared.showAlert(message: "Your profile has been updated !!!", completion: nil)
             }else{
                 Alert.shared.showAlert(message: error, completion: nil)
@@ -206,5 +203,26 @@ extension ProfileVC: UIImagePickerControllerDelegate, OpalImagePickerControllerD
     
     func imagePickerDidCancel(_ picker: OpalImagePickerController){
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ProfileVC {
+    func updateProfile(docID: String,name:String,phoneNumber:String, address:String) {
+        let ref = AppDelegate.shared.db.collection(cUser).document(docID)
+        ref.updateData([
+            cName : name,
+            cPhone : phoneNumber,
+            cAddress : address,
+        ]){ err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+                GFunction.user.name = name
+                GFunction.user.address = address
+                GFunction.user.mobile = phoneNumber
+                Alert.shared.showAlert(message: "Your Profile has been Updated !!!", completion: nil)
+            }
+        }
     }
 }
