@@ -6,20 +6,25 @@ import UIKit
 
 class SearchVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        15
+        self.cakeListData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CakeViewCell", for: indexPath) as! CakeViewCell
+        cell.configFavCell(data: self.cakeListData[indexPath.row])
         let tap = UITapGestureRecognizer()
         tap.addAction {
             if let vc = UIStoryboard.main.instantiateViewController(withClass: CakeDetailsVC.self){
-                self.present(vc, animated: true) {
-                    let vc  = SuccessVC.instantiate(fromAppStoryboard: .main)
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
+                self.present(vc, animated: true, completion: nil)
             }
         }
+        
+        cell.btnFav.addAction(for: .touchUpInside) {
+            Alert.shared.showAlert("", actionOkTitle: "Delete", actionCancelTitle: "Cancel", message: "Are you sure you want to remove?") { (true) in
+                self.removeFromFav(data: self.cakeListData[indexPath.row], email: GFunction.user.email)
+            }
+        }
+        
         cell.vwCell.isUserInteractionEnabled = true
         cell.vwCell.addGestureRecognizer(tap)
         return cell
@@ -32,12 +37,12 @@ class SearchVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
     @IBOutlet weak var cakeList: UICollectionView!
     @IBOutlet weak var cakeListView: UIView!
     
-//    var cakeListData = [ProductModel]()
+    var cakeListData = [CakeModel]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.getCakeList()
+        self.getCakeList()
         self.cakeList.delegate = self
         self.cakeList.dataSource = self
         self.cakeListView.layer.cornerRadius = 15
@@ -65,7 +70,8 @@ class CakeViewCell: UICollectionViewCell {
     @IBOutlet weak var widthConst: NSLayoutConstraint!
     @IBOutlet weak var imgCake: UIImageView!
     @IBOutlet weak var lblName: UILabel!
-    
+    @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var btnFav: UIButton!
     
     override func awakeFromNib() {
         if UIScreen.main.bounds.width == 375 {
@@ -76,12 +82,13 @@ class CakeViewCell: UICollectionViewCell {
         self.imgCake.layer.cornerRadius = 10.0
     }
     
-    func configCell(data: ProductModel) {
+    func configCell(data: CakeModel) {
         self.lblName.text = data.name
         self.imgCake.setImgWebUrl(url: data.image, isIndicator: true)
+        self.lblPrice.text = data.price.description
     }
-
-    func configCellFav(data: FavouriteModel) {
+    
+    func configFavCell(data: CakeModel) {
         self.lblName.text = data.name
         self.imgCake.setImgWebUrl(url: data.image, isIndicator: true)
     }
@@ -90,27 +97,42 @@ class CakeViewCell: UICollectionViewCell {
 
 extension SearchVC {
     func getCakeList() {
-        _ = AppDelegate.shared.db.collection(cProduct).addSnapshotListener{ querySnapshot, error in
+        _ = AppDelegate.shared.db.collection(cFavourite).addSnapshotListener{ querySnapshot, error in
             guard let snapshot = querySnapshot else {
                 print("Error fetching snapshots: \(error!)")
                 return
             }
             self.cakeListData.removeAll()
             if snapshot.documents.count != 0 {
-                for data in snapshot.documents{
-                    let data = data.data()
-                    print(data)
-                    self.cakeListData.append(ProductModel(id: data["id"] as! String, image: (data["image"] as! String), name: (data["name"] as! String), description: (data["description"] as! String), price: (data["price"] as! String)))
+                for data in snapshot.documents {
+                    let data1 = data.data()
+                    if let name: String = data1[cName] as? String, let description: String = data1[cDescription] as? String,let imagePath: String = data1[cImagePath] as? String, let price: String = data1[cPrice] as? String {
+                        print("Data Count : \(self.cakeListData.count)")
+                        self.cakeListData.append(CakeModel(docID: data.documentID, name: name, price: price, description: description, image: imagePath))
+                    }
                 }
                 self.cakeList.delegate = self
                 self.cakeList.dataSource = self
                 self.cakeList.reloadData()
-
             }else{
                 Alert.shared.showAlert(message: "No Data Found !!!", completion: nil)
             }
         }
-
+    }
+    
+    
+    func removeFromFav(data: CakeModel,email:String){
+        let ref = AppDelegate.shared.db.collection(cFavourite).document(data.docID)
+        ref.delete(){ err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully deleted")
+                //Alert.shared.showAlert(message: "Cake has been removed successfully !!!") { (true) in
+                    UIApplication.shared.setTab()
+                //}
+            }
+        }
     }
 }
 
