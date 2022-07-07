@@ -134,7 +134,7 @@ class CakeDetailsVC: UIViewController {
     }
     
     func sendEmail(fullName:String, email:String, completion: @escaping (Result<Void,Error>) -> Void) {
-        let apikey = "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"
+        let apikey = "tWKeJi_AxT3qsNp7XrLBbEJjw0Yf7bw4GfKyYWxP08Y"
         let name = fullName
         let email = email
         
@@ -151,7 +151,7 @@ class CakeDetailsVC: UIViewController {
         session.authentication = Authentication.apiKey(apikey)
         
         let from = Address(email: devemail, name: name)
-         let template = Email(personalizations: [personalization], from: from, templateID: "d-6b7fd08ad23d4a2cb854e48e8023d0e2", subject: "Your Order has been placed!!!")
+         let template = Email(personalizations: [personalization], from: from, templateID: "d854e48e8023d0e2", subject: "Your Order has been placed!!!")
         
         do {
             try session.send(request: template, completionHandler: { (result) in
