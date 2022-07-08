@@ -213,6 +213,60 @@ extension CustomVC : UIPickerViewDelegate, UIPickerViewDataSource {
             }
         }
     }
+    
+    func emailSend(fullName:String, email:String){
+        self.sendEmail(fullName: fullName, email: email){ [unowned self] (result) in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(_):
+                                    //Alert.shared.showAlert(message: "Your Order has been placed successfully !!!") { (true) in
+                                        UIApplication.shared.setSuccess()
+                                   // }
+                case .failure(_):
+                    Alert.shared.showAlert(message: "Error", completion: nil)
+                }
+            }
+            
+        }
+    }
+    
+    func sendEmail(fullName:String, email:String, completion: @escaping (Result<Void,Error>) -> Void) {
+        let apikey = "api_key"
+        let name = fullName
+        let email = email
+        
+        let devemail = "udaydheerajreddy@gmail.com"
+        
+        let data : [String:String] = [
+            "name" : name,
+            "user" : email
+        ]
+        
+        
+        let personalization = TemplatedPersonalization(dynamicTemplateData: data, recipients: email)
+        let session = Session()
+        session.authentication = Authentication.apiKey(apikey)
+        
+        let from = Address(email: devemail, name: name)
+         let template = Email(personalizations: [personalization], from: from, templateID: "template_id", subject: "Your Customised Order has been placed!!!")
+        
+        do {
+            try session.send(request: template, completionHandler: { (result) in
+                switch result {
+                case .success(let response):
+                    print("Response : \(response)")
+                    completion(.success(()))
+                    
+                case .failure(let error):
+                    print("Error : \(error)")
+                    completion(.failure(error))
+                }
+            })
+        }catch(let error){
+            print("ERROR: ")
+            completion(.failure(error))
+        }
+    }
   
 }
     
